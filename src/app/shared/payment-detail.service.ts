@@ -11,7 +11,7 @@ export class PaymentDetailService {
 
     formData: PaymentDetail = new PaymentDetail();
 
-    readonly baseUrl = 'http://localhost:49608/api/PaymentDetail'
+    readonly baseUrl = 'http://localhost:49608/api/PaymentDetails'
 
     postPaymentDetail() {
         return this.http.post(this.baseUrl, this.formData);
