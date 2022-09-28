@@ -10,10 +10,15 @@ export class PaymentDetailService {
     constructor(private http: HttpClient) { }
 
     formData: PaymentDetail = new PaymentDetail();
+    list: PaymentDetail[];
 
     readonly baseUrl = 'http://localhost:49608/api/PaymentDetails'
 
     postPaymentDetail() {
         return this.http.post(this.baseUrl, this.formData);
+    }
+
+    refreshList() {
+        this.http.get(this.baseUrl).toPromise().then(res => res as PaymentDetail[]);
     }
 }
